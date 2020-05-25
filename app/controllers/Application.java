@@ -22,6 +22,7 @@ public class Application extends Controller{
         SubmitData submitData = submitDataForm.get();
 
         List<T_User> t_user = Where.find(submitData.name);
+
         return ok(views.html.index.render(t_user));
     }
 

@@ -9,6 +9,6 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /                           controllers.Application.index(request: Request)
 
 GET     /user                  controllers.UserController.init(id: Int)
-POST    /user/:id              controllers.UserController.insertOrUpdate(request: Request, isEdit: Boolean,id: Int)
+GET    /user/usrEdit              controllers.UserController.insertOrUpdate(request: Request, isEdit: Boolean,id: Int)
 GET     /user/delete           controllers.UserController.delete(request: Request, id: Int)
 GET     /user/search           controllers.Application.search(request: Request)
