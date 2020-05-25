@@ -4,10 +4,10 @@
 @(t_user:List[T_User])
 
 @views.html.main("bbs") {
-@helper.form(action = routes.Application.search){
-  <input type="text" name="searchWord" placeholder="検索ワード" size="20">
+<form method="get" action="search">
+  <input type="text" name="searchWord">
   <input type="submit" value="検索">
-}
+</form>
   <div class ="contrainer">
     <a href = "@routes.UserController.init(0)">新規作成</a>
     <br>
@@ -33,5 +33,6 @@
         </tr>
       }
     </table>
+    <button onclick = "location.href='@routes.Application.index'">一覧</button>
   </div>
 }

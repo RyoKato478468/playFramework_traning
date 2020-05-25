@@ -26,12 +26,7 @@ public class Application extends Controller{
         return ok(views.html.index.render(t_user));
     }
 
-    public Result search(Http.Request request){
-        /*String searchWord = formFactory.form(String.class).bindFromRequest(request);
-        List<T_User> t_user = Where.search(searchWord);
-        return ok(views.html.index.render(t_user));*/
-
-        return redirect(routes.Application.index());
-
+    public Result search(String searchWord){
+        return ok(views.html.index.render(UserForm.search(searchWord)));
     }
 }

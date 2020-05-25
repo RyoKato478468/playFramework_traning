@@ -2,20 +2,21 @@ package models;
 
 import javax.inject.Inject;
 
-import play.data.*;
-import play.mvc.*;
-import tables.find.*;
+import io.ebean.*;
+import tables.T_User;
+
+import java.util.List;
 
 public class UserForm {
 
     @Inject
-    public FormFactory formFactory;
+    public static Finder<Long, T_User> finder = new Finder<Long, T_User>(T_User.class);
 
-    public Form<SubmitData> submitDataForm;
-    public SubmitData submitData;
-
-    public UserForm(Http.Request request){
-        this.submitDataForm = formFactory.form(SubmitData.class).bindFromRequest(request);
-        this.submitData = submitDataForm.get();
+    public static List<T_User> search(String searchWord) {
+        if (searchWord != null) {
+            return finder.query().where().ilike("name", "%" + searchWord + "%").findList();
+        } else {
+            return finder.all();
+        }
     }
 }

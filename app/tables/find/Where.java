@@ -19,8 +19,6 @@ public class Where {
     }
 
     T_User userInfo = new T_User();
-        public void selectId(int id){
-    }
 
     public static List<T_User> search(String searchWord){
         List<T_User> list = DB.find(T_User.class).where().eq("name",searchWord).findList();
@@ -50,6 +48,4 @@ public class Where {
         this.userInfo.id = id;
         userInfo.delete();
     }
-
-
 }

@@ -28,7 +28,4 @@ public class T_User extends BaseTable{
     @Version
     @Formats.DateTime(pattern = "yyyy/MM/dd HH:mm:SS")
     public Date updatedAt;
-
-
-
 }

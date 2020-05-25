@@ -9,5 +9,4 @@ public class SubmitData {
     public String likeFood;
     public Date createdAt;
     public Date updatedAt;
-
 }
