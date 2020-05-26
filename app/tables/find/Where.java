@@ -33,6 +33,7 @@ public class Where {
         this.userInfo.schoolYear = list.schoolYear;
         this.userInfo.height = list.height;
         this.userInfo.likeFood = list.likeFood;
+        this.userInfo.birthDay = list.birthDay;
         this.userInfo.updatedAt = new Date();
 
         if (isEdit) {

@@ -13,6 +13,7 @@
                     <th>学年</th>
                     <th>身長</th>
                     <th>好きな食べ物</th>
+                    <th>誕生日</th>
                 </tr>
                 <tr>
                 @helper.form(action = routes.UserController.insertOrUpdate(isEdit,id)){
@@ -22,6 +23,7 @@
                     <td><input type="text" class="form_control" name="schoolYear" placeholder="学年" size="5"></td>
                     <td><input type="text" class="form_control" name="height" placeholder="身長" size="5"></td>
                     <td><input type="text" class="form_control" name="likeFood" placeholder="好きな食べ物" size="10"></td><br>
+                    <td><input type="text" class="form_control" name="birthDay" placeholder="誕生日" size="10"></td>
                     <input type="hidden" name="isEdit" value="@isEdit">
                     <td><input type="submit" value="@if(isEdit){更新}else{登録}" /></td>
                 }

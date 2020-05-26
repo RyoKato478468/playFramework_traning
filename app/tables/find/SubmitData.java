@@ -7,6 +7,7 @@ public class SubmitData {
     public int schoolYear;
     public int height;
     public String likeFood;
+    public Date birthDay;
     public Date createdAt;
     public Date updatedAt;
 }

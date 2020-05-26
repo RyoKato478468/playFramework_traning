@@ -9,6 +9,7 @@ create table t_user (
   school_year                   integer not null,
   height                        integer not null,
   like_food                     varchar(255),
+  birth_day                     timestamp,
   created_at                    timestamp not null,
   updated_at                    timestamp not null,
   constraint pk_t_user primary key (id)

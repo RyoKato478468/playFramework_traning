@@ -20,6 +20,8 @@ public class T_User extends BaseTable{
     public int schoolYear;
     public int height;
     public String likeFood;
+    @Formats.DateTime(pattern = "yyyy/MM/dd HH:mm:SS")
+    public Date birthDay;
 
     @CreatedTimestamp
     @Formats.DateTime(pattern = "yyyy/MM/dd HH:mm:SS")
