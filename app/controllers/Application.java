@@ -1,6 +1,7 @@
 package controllers;
 
 import models.UserForm;
+import models.UserItem;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.*;
@@ -21,9 +22,9 @@ public class Application extends Controller{
         Form<SubmitData> submitDataForm= formFactory.form(SubmitData.class).bindFromRequest(request);
         SubmitData submitData = submitDataForm.get();
 
-        List<T_User> t_user = Where.find(submitData.name);
+        List<UserItem> items = UserForm.search(submitData.name);
 
-        return ok(views.html.index.render(t_user));
+        return ok(views.html.index.render(items));
     }
 
     public Result search(String searchWord){

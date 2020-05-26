@@ -41,7 +41,7 @@ public class ModelsTest {
         //List<T_User> list = models.UserForm.search("firstUser");
 
         UserForm uf = new UserForm();
-        List<T_User> t_user = uf.search("firstUser");
+        List<UserItem> t_user = uf.search("firstUser");
         System.out.println("---------------------------------");
         System.out.println(t_user);
     }

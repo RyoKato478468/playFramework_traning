@@ -1,7 +1,7 @@
 @import play.mvc.Http.Request;
 @import tables.T_User;
 
-@(t_user:List[T_User])
+@(items:List[UserItem])
 
 @views.html.main("bbs") {
 <form method="get" action="search">
@@ -20,16 +20,16 @@
         <th>作成日時</th>
         <th>更新日時</th>
       </tr>
-      @for(t_user<-t_user){
+      @for(items<-items){
 
         <tr>
-          <td>@t_user.name</td>
-          <td>@t_user.schoolYear 年生</td>
-          <td>@t_user.height cm</td>
-          <td>@t_user.likeFood</td>
-          <td>@t_user.createdAt</td>
-          <td>@t_user.updatedAt</td>
-          <td><a href ="@routes.UserController.init(t_user.id)">編集</a></td>
+          <td>@items.name</td>
+          <td>@items.schoolYear</td>
+          <td>@items.height</td>
+          <td>@items.likeFood</td>
+          <td>@items.createdAt</td>
+          <td>@items.updatedAt</td>
+          <td><a href ="@routes.UserController.init(items.id)">編集</a></td>
         </tr>
       }
     </table>
